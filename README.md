@@ -1,14 +1,14 @@
-Recipe Management Application using SpringBoot (REST API)
+##  Recipe Management Application using SpringBoot (REST API)
 
 Project Overview
 
-The **Recipe Management REST API** is a backend application built using **Spring Boot** that allows users to store, retrieve, update, and delete recipe information. The application loads recipe data from a JSON file during startup, saves it into a MySQL database, and exposes RESTful APIs for interaction.
+The **Recipe Management REST API** is a backend application built using **Spring Boot** that allows users to store, retrieve recipe information. The application loads recipe data from a JSON file during startup, saves it into a MySQL database, and exposes RESTful APIs for interaction.
 
 This project demonstrates the use of **Spring Boot**, **Spring Data JPA**, **Hibernate ORM**, and **Jackson JSON parsing** following a clean layered architecture.
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 * Parse recipe data from a JSON file
 * Store recipe information in a relational database
@@ -18,7 +18,7 @@ This project demonstrates the use of **Spring Boot**, **Spring Data JPA**, **Hib
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```
 src/main/java/com/example/recipes
@@ -38,7 +38,7 @@ src/main/resources
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * Java
 * Spring Boot
@@ -51,7 +51,7 @@ src/main/resources
 
 ---
 
-## 📂 Features
+##  Features
 
 * Automatic JSON data ingestion at application startup
 * CRUD operations on recipes
@@ -62,7 +62,7 @@ src/main/resources
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 ### Recipes Table
 
@@ -81,7 +81,7 @@ CREATE TABLE recipes (
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1️⃣ Prerequisites
 
@@ -134,7 +134,7 @@ On startup:
 
 ---
 
-## 🔁 JSON Data Loading
+##  JSON Data Loading
 
 * JSON file location: `src/main/resources/US_recipes_null.json`
 * Loaded automatically using `CommandLineRunner`
@@ -142,7 +142,7 @@ On startup:
 
 ---
 
-## 🌐 API Endpoints
+##  API Endpoints
 
 ### ➤ Get All Recipes
 
@@ -154,32 +154,127 @@ GET /api/recipes/top?limit=5
 **Response (200 OK)**
 
 ```json
-[
-  {
-    "id": 8453,
-    "title": "Rava Dosa",
-    "cuisine": "South Indian",
-    "rating": null,
-    "description": "A lentil batter which is dipped with chutney",
-    "nutrients": {
-        "calories": "500 kcal",
-        "carbohydrateContent": "60 g",
-        "proteinContent": "6 g",
-        "fatContent": "25 g"
-    },
-    "serves": "6 servings",
-    "prep_time": 20,
-    "cook_time": 40,
-    "total_time": 60
+{
+    "data": [
+        {
+            "id": 8302,
+            "title": "Green Chile Chicken Casserole",
+            "cuisine": "Tex-Mex Recipes",
+            "rating": 5.0,
+            "description": "This easy casserole layers corn tortillas, chicken, green chiles, and tomatillos for an easy Tex-Mex dinner reminiscent of enchiladas.",
+            "nutrients": {
+                "calories": "420 kcal",
+                "fatContent": "20 g",
+                "fiberContent": "8 g",
+                "sugarContent": "4 g",
+                "sodiumContent": "1064 mg",
+                "proteinContent": "33 g",
+                "cholesterolContent": "107 mg",
+                "carbohydrateContent": "27 g",
+                "saturatedFatContent": "8 g",
+                "unsaturatedFatContent": "0 g"
+            },
+            "serves": "8 servings",
+            "prep_time": 30,
+            "cook_time": 25,
+            "total_time": 55
+        },
+        {
+            "id": 8318,
+            "title": "Air Fryer Turkey Fajitas",
+            "cuisine": "Tex-Mex Recipes",
+            "rating": 5.0,
+            "description": "Turkey breast is seasoned with Mexican-inspired spices, herbs, and lime juice and air-fried with vegetables for an easy fajita dish that's bursting with flavor.",
+            "nutrients": {
+                "calories": "247 kcal",
+                "fatContent": "7 g",
+                "fiberContent": "4 g",
+                "sugarContent": "5 g",
+                "sodiumContent": "81 mg",
+                "proteinContent": "32 g",
+                "cholesterolContent": "82 mg",
+                "carbohydrateContent": "15 g",
+                "saturatedFatContent": "1 g",
+                "unsaturatedFatContent": "0 g"
+            },
+            "serves": "4 servings",
+            "prep_time": 20,
+            "cook_time": 30,
+            "total_time": 50
+        },
+        {
+            "id": 8295,
+            "title": "Authentic Fire-Roasted Tex-Mex Salsa",
+            "cuisine": "Tex-Mex Recipes",
+            "rating": 5.0,
+            "description": "Fire up that broiler to make your own roasted tomato salsa blended with jalapenos, onion, and cilantro.",
+            "nutrients": {
+                "calories": "14 kcal",
+                "fatContent": "0 g",
+                "fiberContent": "1 g",
+                "sugarContent": "2 g",
+                "sodiumContent": "343 mg",
+                "proteinContent": "1 g",
+                "carbohydrateContent": "3 g",
+                "unsaturatedFatContent": "0 g"
+            },
+            "serves": "8 servings",
+            "prep_time": 10,
+            "cook_time": 10,
+            "total_time": 20
+        },
+        {
+            "id": 8301,
+            "title": "Mexican Black Bean and Turkey Wraps",
+            "cuisine": "Tex-Mex Recipes",
+            "rating": 5.0,
+            "description": "These easy ground turkey wraps will feed the whole family with a lean yet filling combo of green chiles, spices, brown rice, and black beans.",
+            "nutrients": {
+                "calories": "403 kcal",
+                "fatContent": "11 g",
+                "fiberContent": "10 g",
+                "sugarContent": "6 g",
+                "sodiumContent": "1883 mg",
+                "proteinContent": "31 g",
+                "cholesterolContent": "90 mg",
+                "carbohydrateContent": "45 g",
+                "saturatedFatContent": "3 g",
+                "unsaturatedFatContent": "0 g"
+            },
+            "serves": "4 servings",
+            "prep_time": 10,
+            "cook_time": 35,
+            "total_time": 45
+        },
+        {
+            "id": 8299,
+            "title": "Tex-Mex Air Fryer Hash Browns",
+            "cuisine": "Tex-Mex Recipes",
+            "rating": 5.0,
+            "description": "Use an air fryer to make this crispy, tasty potato hash featuring bell peppers and jalapenos with Tex-Mex seasoning.",
+            "nutrients": {
+                "calories": "186 kcal",
+                "fatContent": "4 g",
+                "fiberContent": "5 g",
+                "sugarContent": "3 g",
+                "sodiumContent": "79 mg",
+                "proteinContent": "4 g",
+                "carbohydrateContent": "34 g",
+                "saturatedFatContent": "1 g",
+                "unsaturatedFatContent": "0 g"
+            },
+            "serves": "4 servings",
+            "prep_time": 15,
+            "cook_time": 30,
+            "total_time": 45
+        }
+    ]
 }
-.
-.
-.
-.
-]
 ```
 
 
+
+### ➤ Add new recipe (POST)
 ```
 POST /api/recipes
 ```
@@ -227,7 +322,7 @@ POST /api/recipes
 
 
 
-## 🧪 API Testing
+##  API Testing
 
 You can test APIs using:
 
@@ -237,7 +332,7 @@ You can test APIs using:
 
 ---
 
-## 📦 Maven Dependencies (Key)
+##  Maven Dependencies (Key)
 
 * spring-boot-starter-web
 * spring-boot-starter-data-jpa
